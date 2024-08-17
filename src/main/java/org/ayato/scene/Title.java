@@ -1,5 +1,6 @@
 package org.ayato.scene;
 
+import org.ayato.animation.PropertiesComponent;
 import org.ayato.system.BaseBackground;
 import org.ayato.system.Layer;
 import org.ayato.system.ToonMaster;
@@ -30,5 +31,7 @@ public class Title extends BaseScene {
                 });
             }
         });
+        toonMaster.addAnimation("ToonMaster", PropertiesComponent.ofText(20, 20).font("", 0, 1.5f));
+
     }
 }
