@@ -7,7 +7,7 @@ public abstract class AbstractEntity extends ToonObject {
     private String name = "PLAYER";
     private int hp, mhp;
     private int lv;
-
+    public boolean isDead = false;
     protected AbstractEntity(Transform transform, String name, int mhp, int lv) {
         super(transform);
         this.mhp =mhp;
@@ -16,5 +16,10 @@ public abstract class AbstractEntity extends ToonObject {
         this.name = name;
     }
 
-
+    public void receivedDamage(float atk){
+        hp -= atk;
+        if(hp <= 0){
+            isDead = true;
+        }
+    }
 }

@@ -10,12 +10,14 @@ public final class Counter<T extends AbstractEntity> extends AbstractCard<T> {
     }
 
     @Override
-    void specialAttack(AbstractCard<?> opponent) {
+    void specialAttack(AbstractCard<?> opponent) {}
 
-    }
 
     @Override
-    void attack(AbstractCard<?> opponent) {
+    void attack(AbstractCard<?> opponent) {}
 
+    @Override
+    void received(AbstractEntity o,  float atk) {
+        o.receivedDamage(atk * 1.3f);
     }
 }

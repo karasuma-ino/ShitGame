@@ -7,7 +7,7 @@ public abstract sealed class AbstractCard<T extends AbstractEntity> permits Weak
     private final Class<? extends AbstractCard<?>> weakness;
     private final Class<? extends AbstractCard<?>> special;
     private final String name;
-    private final T owner;
+    protected final T owner;
 
     public AbstractCard(String mark, Class<? extends AbstractCard<?>> weakness, Class<? extends AbstractCard<?>> special, T owner){
         name = mark;
@@ -26,4 +26,5 @@ public abstract sealed class AbstractCard<T extends AbstractEntity> permits Weak
 
     abstract void specialAttack(AbstractCard<?> opponent);
     abstract void attack(AbstractCard<?> opponent);
+    abstract void received(AbstractEntity entity, float atk);
 }
