@@ -3,7 +3,7 @@ package org.ayato.card;
 import org.ayato.entity.AbstractEntity;
 import org.ayato.entity.Player;
 
-public abstract sealed class AbstractCard<T extends AbstractEntity> permits WeakAttack{
+public abstract sealed class AbstractCard<T extends AbstractEntity> permits WeakAttack, HeavyAttack, Guard{
 
     private final Class<? extends AbstractCard<?>> weakness;
     private final Class<? extends AbstractCard<?>> special;
@@ -25,5 +25,5 @@ public abstract sealed class AbstractCard<T extends AbstractEntity> permits Weak
     }
 
     abstract void specialAttack(AbstractCard<?> opponent);
-    abstract void attack(AbstractCard<?> opponent)
+    abstract void attack(AbstractCard<?> opponent);
 }
