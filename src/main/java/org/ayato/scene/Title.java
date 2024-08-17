@@ -32,14 +32,16 @@ public class Title extends BaseScene {
                 });
             }
         });
-        toonMaster.addAnimation("じゃんけん的なRPG(仮)" ,
+        toonMaster.addAnimation("jyankengame" ,
                                 PropertiesComponent.ofText(130,50, 1000, 50)
                                                    .font("",Font.ITALIC,4));
-        toonMaster.addAnimation("ゲームスタート",
+        toonMaster.addAnimation("GAMESTART",
                                 PropertiesComponent.ofText(130,100,300,50)
                                                    .font("",Font.BOLD,2)
-                                        .button(0,0,300,30, MaterialUtils.NORMAL.get(), a->{
-
-                                        }));
+                                                   .button(0,0,300,30, MaterialUtils.NORMAL.get(),
+                                                            a->toonMaster.changeScene(new Battle()
+                                                                                     )
+                                                          )
+                               );
     }
 }
