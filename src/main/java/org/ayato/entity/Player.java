@@ -6,14 +6,9 @@ import org.ayato.component.Transform;
 import java.awt.*;
 
 public class Player extends ToonObject {
-    private String name = "PLAYER";
-    private int hp, mhp;
-    private int lv;
     protected Player() {
         super(new Transform(0, 0, 0, 0));
-        mhp = 20;
-        hp = mhp;
-        lv = 1;
+
     }
 
 
