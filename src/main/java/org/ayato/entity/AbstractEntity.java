@@ -8,11 +8,12 @@ public abstract class AbstractEntity extends ToonObject {
     private int hp, mhp;
     private int lv;
 
-    protected AbstractEntity(Transform transform, String name, int mhp, int mmp, int lv) {
+    protected AbstractEntity(Transform transform, String name, int mhp, int lv) {
         super(transform);
-        mhp = 20;
+        this.mhp =mhp;
         hp = mhp;
-        lv = 1;
+        this.lv = lv;
+        this.name = name;
     }
 
 

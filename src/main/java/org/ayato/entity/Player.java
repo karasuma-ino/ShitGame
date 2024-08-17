@@ -5,9 +5,9 @@ import org.ayato.component.Transform;
 
 import java.awt.*;
 
-public class Player extends ToonObject {
+public class Player extends AbstractEntity {
     protected Player() {
-        super(new Transform(0, 0, 0, 0));
+        super(new Transform(0, 0, 0, 0), "PLAYER", 20, 1);
 
     }
 
