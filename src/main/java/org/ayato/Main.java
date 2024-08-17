@@ -1,9 +1,13 @@
 package org.ayato;
 
-public class Main {
+import org.ayato.scene.Title;
+import org.ayato.system.ToonMaster;
 
+public class Main {
+    public static final ToonMaster MASTER = ToonMaster.create("title", true);
     public static void main(String[] args) {
-        System.out.println("Hello world!");
-        System.out.println("Hello World2");
+
+        MASTER.changeScene(new Title());
+        MASTER.setVisible(true);
     }
 }
