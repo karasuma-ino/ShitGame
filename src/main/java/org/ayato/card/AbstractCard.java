@@ -1,24 +1,31 @@
 package org.ayato.card;
 
+import org.ayato.entity.AbstractEntity;
 import org.ayato.entity.Player;
 
-public abstract class AbstractCard{
-    private final Class<? extends AbstractCard> weakness;
-    private final Class<? extends AbstractCard> special;
-    private final String name;
+public abstract sealed class AbstractCard<T extends AbstractEntity> permits WeakAttack{
 
-    public AbstractCard(String mark, Class<? extends AbstractCard> weakness, Class<? extends AbstractCard> special, Player player){
+    private final Class<? extends AbstractCard<?>> weakness;
+    private final Class<? extends AbstractCard<?>> special;
+    private final String name;
+    private final T owner;
+
+    public AbstractCard(String mark, Class<? extends AbstractCard<?>> weakness, Class<AbstractCard<?>> special, T owner){
         name = mark;
         this.weakness = weakness;
         this.special = special;
+        this.owner = owner;
     }
-    public void judge(AbstractCard card){
+    public void judge(AbstractCard<?> card){
         if(card.getClass() == weakness){
-            card.attack();
+            card.attack(this);
         }else if(card.getClass() == special){
-            attack();
+            attack(card);
+        }else{
+            card.attack(this);
+            attack(card);
         }
     }
 
-    abstract void attack();
+    abstract void attack(AbstractCard<?> opponent);
 }
