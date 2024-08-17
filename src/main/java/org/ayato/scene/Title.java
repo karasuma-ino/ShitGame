@@ -5,6 +5,7 @@ import org.ayato.system.BaseBackground;
 import org.ayato.system.Layer;
 import org.ayato.system.ToonMaster;
 import org.ayato.util.BaseScene;
+import org.ayato.util.MaterialUtils;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -31,7 +32,14 @@ public class Title extends BaseScene {
                 });
             }
         });
-        toonMaster.addAnimation("ToonMaster", PropertiesComponent.ofText(20, 20).font("", 0, 1.5f));
+        toonMaster.addAnimation("じゃんけん的なRPG(仮)" ,
+                                PropertiesComponent.ofText(130,50, 1000, 50)
+                                                   .font("",Font.ITALIC,4));
+        toonMaster.addAnimation("ゲームスタート",
+                                PropertiesComponent.ofText(130,100,300,50)
+                                                   .font("",Font.BOLD,2)
+                                        .button(0,0,300,30, MaterialUtils.NORMAL.get(), a->{
 
+                                        }));
     }
 }
