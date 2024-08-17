@@ -4,12 +4,12 @@ import org.ayato.entity.AbstractEntity;
 
 public abstract sealed class AbstractCard<T extends AbstractEntity> permits WeakAttack, HeavyAttack, Counter {
 
-    private final Class<? extends AbstractCard<?>> weakness;
-    private final Class<? extends AbstractCard<?>> special;
+    private final Class<?> weakness;
+    private final Class<?> special;
     private final String name;
     protected final T owner;
 
-    public AbstractCard(String mark, Class<? extends AbstractCard<?>> weakness, Class<? extends AbstractCard<?>> special, T owner){
+    public AbstractCard(String mark, Class<? > weakness, Class<? > special, T owner){
         name = mark;
         this.weakness = weakness;
         this.special = special;
