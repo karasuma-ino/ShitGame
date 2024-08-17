@@ -17,10 +17,13 @@ public abstract sealed class AbstractCard<T extends AbstractEntity> permits Weak
         this.owner = owner;
     }
     public void judge(AbstractCard<?> card){
-        if(card.getClass() == special || card.getClass() != weakness){
+        if(card.getClass() == special){
+            specialAttack(card);
+        }else if(card.getClass() != weakness){
             attack(card);
         }
     }
 
-    abstract void attack(AbstractCard<?> opponent);
+    abstract void specialAttack(AbstractCard<?> opponent);
+    abstract void attack(AbstractCard<?> opponent)
 }
