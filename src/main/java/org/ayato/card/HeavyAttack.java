@@ -4,8 +4,11 @@ import org.ayato.entity.AbstractEntity;
 
 public final class HeavyAttack<T extends AbstractEntity> extends AbstractCard<T>{
 
-    public HeavyAttack(String mark, Class<? extends AbstractCard<?>> weakness, Class<AbstractCard<?>> special, T owner) {
-        super(mark, weakness, special, owner);
+    public HeavyAttack(T owner) {
+        super("HeavyAttack",
+                (Class<? extends AbstractCard<?>>) WeakAttack.class,
+                (Class<? extends AbstractCard<?>>) Counter.class, owner);
+
     }
 
     @Override
