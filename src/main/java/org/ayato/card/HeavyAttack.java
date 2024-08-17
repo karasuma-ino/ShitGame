@@ -6,8 +6,8 @@ public final class HeavyAttack<T extends AbstractEntity> extends AbstractCard<T>
     private int atk = 10;
     public HeavyAttack(T owner) {
         super("HeavyAttack",
-                (Class<? extends AbstractCard<?>>) WeakAttack.class,
-                (Class<? extends AbstractCard<?>>) Counter.class, owner);
+                WeakAttack.class,
+                Counter.class, owner);
 
     }
 
